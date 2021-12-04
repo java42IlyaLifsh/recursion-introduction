@@ -31,7 +31,9 @@ static public long pow (int a, int b) {
 //	return a * pow(a, b - 1);
 	// according to the requirements 
 	if (b<0) { throw new IllegalArgumentException("power can't be a negative");}
+	//[YG] in the programming like in algebra 0^0 is 1
 	if (a==0 && b==0) { throw new IllegalAccessError(" 0 pow 0 undefind");}
+	//[YG] try to write code with no three following statements and no isEven either. Consider update of your method multiply
 	if (b==0 && a!=0) return 1;
 	if (a==0 && b!=0) return 0;
 	if (a<0 && isEven(b)) a=-a;
