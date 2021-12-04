@@ -29,9 +29,25 @@ static public long pow (int a, int b) {
 //		return 1;
 //	}
 //	return a * pow(a, b - 1);
-	//TODO according to the requirements 
-	return 0;
+	// according to the requirements 
+	if (b<0) { throw new IllegalArgumentException("power can't be a negative");}
+	if (a==0 && b==0) { throw new IllegalAccessError(" 0 pow 0 undefind");}
+	if (b==0 && a!=0) return 1;
+	if (a==0 && b!=0) return 0;
+	if (a<0 && isEven(b)) a=-a;
+	return multyply (a, pow (a, b-1));	
+	}
+
+private static boolean isEven(int num) {
+	if (num ==1)return false;
+	if (num ==2)return true;	
+	return isEven(num-2);
 }
+private static long multyply(int number, long power) {	
+	return power>0 ? number + multyply(number, power-1)  :  0;
+}
+
+
 
 /**
  * 
@@ -57,7 +73,11 @@ private static long sum(int firstIndex, int[] array) {
  * 4. No static fields
  */
 public static int square(int x) {
-	// TODO Auto-generated method stub
-	return 0;
+	if (x<0) x=-x;
+	if (x==1)return 1;
+	if (x==0)return 0;
+	//x**2=((x-1)+1)**2=(x-1)**2 +2*(x-1)*1 +1**2=(x-1)**2 +2*x -1
+	return square(x-1)+x+x-1;
+	
 }
 }

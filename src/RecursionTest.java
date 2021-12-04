@@ -46,7 +46,16 @@ class RecursionTest {
 			fl = true;
 		}
 		assertTrue(fl);
+		boolean f2=false;
+		try{
+			Recursion.pow(0, 0);
+		} catch (IllegalAccessError e) {
+			f2=true;
+			
+		}
+		assertTrue(f2);
 	}
+		
 	@Test
 	void sumtest() {
 		assertEquals(10, Recursion.sum(new int[] {30, 20, -40}));
