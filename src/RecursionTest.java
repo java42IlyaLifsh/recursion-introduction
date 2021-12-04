@@ -35,6 +35,9 @@ class RecursionTest {
 	}
 	@Test
 	void powTest() {
+		/* V.R.
+		 * I would add tests 0^3 and 3^0
+		 */
 		assertEquals(4, Recursion.pow(-2, 2));
 		assertEquals(4, Recursion.pow(2, 2));
 		assertEquals(-8, Recursion.pow(-2, 3));
@@ -63,6 +66,9 @@ class RecursionTest {
 	}
 	@Test
 	void squareTest() {
+		/* V.R.
+		 * I would add tests 0^2 and 2^0
+		 */
 		assertEquals(4, Recursion.square(2));
 		assertEquals(4, Recursion.square(-2));
 		assertEquals(100, Recursion.square(10));

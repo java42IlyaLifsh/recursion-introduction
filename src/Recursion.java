@@ -30,6 +30,7 @@ static public long pow (int a, int b) {
 //	}
 //	return a * pow(a, b - 1);
 	// according to the requirements 
+	// V.R. The braces aren't obligatory here
 	if (b<0) { throw new IllegalArgumentException("power can't be a negative");}
 	if (a==0 && b==0) { throw new IllegalAccessError(" 0 pow 0 undefind");}
 	if (b==0 && a!=0) return 1;
@@ -73,6 +74,11 @@ private static long sum(int firstIndex, int[] array) {
  * 4. No static fields
  */
 public static int square(int x) {
+	/* V.R. May be the following is better
+	   if(x==1 || x==0) return x;
+	   if(x<0) x=-x;
+	 * Even the order of lines may be significant
+	 */
 	if (x<0) x=-x;
 	if (x==1)return 1;
 	if (x==0)return 0;
